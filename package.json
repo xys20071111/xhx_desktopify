@@ -13,6 +13,7 @@
   "author": "xys20071111",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "mime": "^2.4.6"
   }
 }
