@@ -14,8 +14,9 @@ app.get('/js/*',(req,res)=>{
 		let src = ''
 		r.on('data',d=>{src += d});
 		r.on('end',()=>{
-			src = src.replace(new RegExp('channel.channelConfig.channelId','gm'),'channel.channelEumn.IOS');
-			src = src.replace(`url = clientCore.GlobalConfig.isApp ? "js/" + packName + ".js" : "js/" + packName + ".js?" + Math.random();`,`url = clientCore.GlobalConfig.isApp ? "js/" + packName + ".js" : "js/" + packName + ".js";`)
+			src = src.replace(new RegExp('channel.ChannelConfig.channelId','gm'),'channel.ChannelEnum.IOS');
+			src = src.replace(`url = clientCore.GlobalConfig.isApp ? "js/" + packName + ".js" : "js/" + packName + ".js?" + Math.random();`,`url = clientCore.GlobalConfig.isApp ? "js/" + packName + ".js" : "js/" + packName + ".js";`);
+			src = src.replace(`return window.location.href.indexOf('61.com') == -1;`,'return false;')
 			res.send(src);
 			console.log(`GET ${URL_PREFIX}${req.path}`);
 		});
